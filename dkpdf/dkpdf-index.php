@@ -36,9 +36,20 @@
               global $post; ?>
 
               <?php
-                // add your stuff here
-                the_content();
-              ?>
+                if( get_field('post_name') ) { ?>
+                  <p><?php echo get_field('post_name');?></p>
+                <?php }
+
+                $image = get_field('post_image');
+                if( !empty($image) ): ?>
+                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                <?php endif; ?>
+
+                <?php
+                $location = get_field('post_map');
+                if( !empty($location) ): ?>
+                  <img style="margin-top:25px;" width="1500" height="250" src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo $location['lat'];?>,<?php echo $location['lng'];?>&zoom=15&size=1500x250&sensor=false&markers=color:red%7Clabel:%7C<?php echo $location['lat'];?>,<?php echo $location['lng'];?>">        
+                <?php endif; ?>
 
           <?php }
         }
