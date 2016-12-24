@@ -1,0 +1,15 @@
+/*
+Theme Name: Twenty Seventeen Child
+Template: twentyseventeen
+Version: 1.0
+*/
+.acf-map {
+	width: 100%;
+	height: 200px;
+	border: #ccc solid 1px;
+	margin: 20px 0;
+}
+
+.acf-map img {
+   max-width: inherit !important;
+}
